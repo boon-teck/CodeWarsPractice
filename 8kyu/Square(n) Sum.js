@@ -1,5 +1,5 @@
 function squareSum(numbers){ 
-    //es6 reduce
+    //reduce
     if (numbers.length > 0) {
       return numbers.reduce((acc,num)=> acc + num * num , 0)
     }
