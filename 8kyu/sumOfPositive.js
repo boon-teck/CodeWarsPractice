@@ -11,3 +11,8 @@ function positiveSum(arr) {
     }
     return sum;
 }
+
+//just reduce
+function positiveSum(arr) {
+    return arr.reduce((acc,num)=> acc + (num > 0 ? num : 0),0);
+ }
