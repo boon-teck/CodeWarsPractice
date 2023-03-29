@@ -13,3 +13,8 @@ function disemvowel(str) {
 function disemvowel(str) {
     return str.split("").filter(str => !'aeiouAEIOU'.includes(str)).join("")
 }
+
+//str replace with regex
+function disemvowel(str) {
+    return str.replace(/[aeiou]/ig,"");
+}
