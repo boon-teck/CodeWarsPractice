@@ -19,3 +19,4 @@ function highAndLow(numbers){
     orderedArr = numbers.split(" ").sort((a,b) => a-b)
     return `${orderedArr[orderedArr.length-1]} ${orderedArr[0]}`
 }
+
