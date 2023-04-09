@@ -8,7 +8,7 @@ The order of the numbers passed in could be any order. The array will always inc
 function twoOldestAges(ages){
     let largestAge = Math.max(...ages)
     let twoOldestAges = []
-    for (let i = 0; i < ages.length; i++){
+    for (let i = 0; i < ages.length; i++){ //O(N)
       if (ages[i] == largestAge){
         ages.splice(i,1)
         let secondLargestAge = Math.max(...ages)
@@ -18,4 +18,15 @@ function twoOldestAges(ages){
     }
     return twoOldestAges
 }
+
+//using the sort function
+function twoOldestAges(ages){
+    return ages.sort((a,b)=> b-a).splice(0,2).reverse()
+}
+
+//slice from the back
+function twoOldestAges(ages){
+    return ages.sort((a,b) => a-b).slice(-2);
+}
+
   
