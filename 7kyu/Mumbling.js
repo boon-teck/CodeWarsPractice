@@ -25,3 +25,7 @@ function accum(s) {
     return returnedArray.join('-')
 }
   
+
+function accum(s) {
+	return s.split("").map((char,idx) => char.toUpperCase()+char.repeat(idx).toLowerCase()).join("-")
+}
