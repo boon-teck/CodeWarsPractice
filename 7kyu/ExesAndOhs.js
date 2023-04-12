@@ -31,3 +31,12 @@ function XO(str) {
       return false
     }
 }
+
+//regex
+function XO(str) {
+    console.log(str)
+    let x = str.match(/x/gi)
+    let o = str.match(/o/gi)
+    return (x == null ? 0 : x.length) === (o == null ? 0 : o.length) //better way : return (x && x.length) === (o && o.length)
+
+}
