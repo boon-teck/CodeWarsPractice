@@ -20,3 +20,8 @@ function digitalRoot(n) {
     }
     return n
 }
+
+//Casting out nines method to find digital root 
+function digitalRoot(n) {
+    return (n-1) % 9 + 1; // minus and add 1 for 999999999
+}
