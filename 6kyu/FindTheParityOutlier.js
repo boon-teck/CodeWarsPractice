@@ -9,3 +9,23 @@ Should return: 11 (the only odd number)
 Should return: 160 (the only even number)
 */
 
+function findOutlier(integers){
+    let oddOrEven = {}
+    for (let i=0; i < integers.length; i++){
+      if (integers[i]%2) { // is odd 
+        if(!oddOrEven["odd"] && oddOrEven["even"]) { // if (doesnt contain odd and contains even)
+          return integers[i]
+        } else if (!oddOrEven["odd"] && !oddOrEven["even"]) { //(doesnt contain odd nor even)
+          oddOrEven["odd"] = true
+        }
+      }
+      
+      if (!(integers[i]%2)) { // is even 
+        if(!oddOrEven["even"] && oddOrEven["odd"]) { // if (doesnt contain odd and contains even)
+          return integers[i]
+        } else if (!oddOrEven["even"] && !oddOrEven["odd"]) { //(doesnt contain odd nor even)
+          oddOrEven["even"] = true
+        }
+      }
+    }
+}
