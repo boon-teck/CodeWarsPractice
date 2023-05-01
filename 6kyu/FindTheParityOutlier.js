@@ -10,22 +10,35 @@ Should return: 160 (the only even number)
 */
 
 function findOutlier(integers){
-    let oddOrEven = {}
+    let oddOrEven = {
+      "odd": [],
+      "even": []
+    }
     for (let i=0; i < integers.length; i++){
       if (integers[i]%2) { // is odd 
-        if(!oddOrEven["odd"] && oddOrEven["even"]) { // if (doesnt contain odd and contains even)
-          return integers[i]
-        } else if (!oddOrEven["odd"] && !oddOrEven["even"]) { //(doesnt contain odd nor even)
-          oddOrEven["odd"] = true
-        }
-      }
-      
-      if (!(integers[i]%2)) { // is even 
-        if(!oddOrEven["even"] && oddOrEven["odd"]) { // if (doesnt contain odd and contains even)
-          return integers[i]
-        } else if (!oddOrEven["even"] && !oddOrEven["odd"]) { //(doesnt contain odd nor even)
-          oddOrEven["even"] = true
-        }
+        oddOrEven["odd"].push(i)
+      } else if (!(integers[i]%2)){
+        oddOrEven["even"].push(i)
       }
     }
+    if (oddOrEven["odd"].length == 1){
+      return integers[oddOrEven["odd"][0]]
+    } else {
+      return integers[oddOrEven["even"][0]]
+    }
+}
+
+//forEach loop and compare length
+function findOutlier(integers){
+    let even = []
+    let odd = []
+    integers.forEach((num) => num% 2 !=0 ? odd.push(num) : even.push(num))
+    return odd.length > 1 ? even[0] : odd[0]
+}
+
+//es6 filter & loop twice with filter
+function findOutlier(integers){
+    const even = integers.filter(num => !(num % 2))
+    const odd = integers.filter(num => num % 2)
+    return even.length == 1 ? even[0] : odd[0]
 }
