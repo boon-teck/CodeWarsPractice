@@ -28,3 +28,12 @@ var countBits = function(n) {
     }
     return count
 };
+
+
+//interesting
+//to get bit representation with toString(2)
+var countBits = function(n) {
+    let bitRepresentation = n.toString(2)
+    let wordWithOnes =  bitRepresentation.split(0).join("") //remove 0s
+    return wordWithOnes.length
+}
