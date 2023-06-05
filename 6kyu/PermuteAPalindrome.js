@@ -25,7 +25,6 @@ function permuteAPalindrome (input) {
     let noOfOdd = 0
     for (const alphabet in palindromeObj) {
       if (palindromeObj[alphabet] % 2){//odd
-        console.log(alphabet)
         noOfOdd++
       } 
     }
