@@ -15,11 +15,12 @@ Together with the encryption function, you should also implement a decryption fu
 If the string S is an empty value or the integer N is not positive, return the first argument without changes.
 */
 
-//draft
+//First Draft - To Refactor
 function encrypt(text, n) {
     let odd = []
     let even = []
     let count = 0
+    if (text == null) return null
     while (n > count) {
       for (let i=0; i<text.length; i++) {
       if (i % 2) {
@@ -38,7 +39,7 @@ function encrypt(text, n) {
   
   function decrypt(encryptedText, n) {
     //odd + even
-    console.log(encryptedText,n)
+    if (encryptedText == null) return null
     let newWord = encryptedText
     let tempWord = ''
     let count = 0
@@ -51,7 +52,7 @@ function encrypt(text, n) {
           tempWord += oddText[j]
   
         }
-        newWord = tempWord + "!"
+        newWord = tempWord + newWord[newWord.length-1]
         tempWord = ''
         count++
       } else {
@@ -68,4 +69,4 @@ function encrypt(text, n) {
       }
     }
     return newWord
-  }
+}
