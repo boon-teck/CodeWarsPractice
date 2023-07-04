@@ -42,8 +42,11 @@ function stockList(listOfArt, listOfCat){
         res[firstCode] += catgoriesAmt
       }
     }
+    let total = 0
     for (let code in res) {
       returnArr.push(`(${code} : ${res[code]})`)
+      total += res[code]
     }
-    return returnArr.join(' - ')
+    
+    return total ? returnArr.join(' - ') : ""
 }
